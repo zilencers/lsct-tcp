@@ -3,6 +3,7 @@
 execute() {
     echo "Disabling ICMP broadcast echo activity"
     sysctl -w net.ipv4.icmp_echo_ignore_broadcasts=1
+    echo ""
 
     echo "Disabling ICMP routing redirects"
     sysctl -w net.ipv4.conf.all.accept_redirects=0
@@ -11,17 +12,21 @@ execute() {
     sysctl -w net.ipv6.conf.all.accept_redirects=0
     sysctl -w net.ipv4.conf.all.send_redirects=0
     sysctl -w net.ipv6.conf.all.send_redirects=0
+    echo ""
 
     echo "Enforcing sanity checking, ingress filtering or egress filtering"
     sysctl -w net.ipv4.conf.all.rp_filter=1
+    echo ""
 
     echo "Logging and dropping 'Martian' packets"
     sysctl -w net.ipv4.conf.all.log_martians=1
+    echo ""
 
     echo "Increase resiliance under heavy TCP load (SYN Flood attacks)"
     sysctl -w net.ipv4.tcp_max_syn_backlog=1280
     sysctl -w net.ipv4.tcp_syncookies=1
     sysctl -w net.ipv4.tcp_fin_timeout=3
+    echo ""
 
     echo "Process Complete... "
     echo "Press any key to continue"
