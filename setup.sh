@@ -42,7 +42,7 @@ perf_tweaks() {
          echo ""
     fi
 
-    sysctl -p
+    sysctl -p $SYSCTL_CONF
 
     echo "Process Complete... "
     echo "Press any key to continue"
