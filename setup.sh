@@ -61,7 +61,6 @@ sec_tweaks() {
     echo "net.ipv4.conf.all.send_redirects=0" >> $SYSCTL_CONF
     echo "net.ipv6.conf.all.accept_redirects=0" >> $SYSCTL_CONF
     echo "net.ipv6.conf.default.accept_redirects=0" >> $SYSCTL_CONF
-    echo "net.ipv6.conf.all.send_redirects=0" >> $SYSCTL_CONF
 
     #  Indicates that the media is shared with different subnets
     echo "net.ipv4.conf.all.shared_media=1" >> $SYSCTL_CONF
